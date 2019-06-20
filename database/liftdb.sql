@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2019 at 08:11 AM
+-- Generation Time: Jun 21, 2019 at 12:34 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -136,28 +136,31 @@ CREATE TABLE `visit` (
   `Vol_ID` int(11) NOT NULL,
   `RecID` int(12) NOT NULL,
   `Purpose` varchar(32) NOT NULL,
+  `Category` enum('RESPITE','MEAL','FINANCIAL','HOUSE','YARD','TRANSPORT','PET','SOCIAL','OTHER') NOT NULL,
   `V_Year` int(4) NOT NULL,
   `V_Month` int(2) NOT NULL,
   `V_Day` int(2) NOT NULL,
   `V_Time` varchar(10) NOT NULL,
   `V_Complete` tinyint(1) NOT NULL,
-  `V_Notes` text NOT NULL
+  `V_Notes` text NOT NULL,
+  `Counted` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `visit`
 --
 
-INSERT INTO `visit` (`VisitID`, `ChurchID`, `Vol_ID`, `RecID`, `Purpose`, `V_Year`, `V_Month`, `V_Day`, `V_Time`, `V_Complete`, `V_Notes`) VALUES
-(1, 1, 1, 1, 'Helping to Water Plants Today', 2019, 5, 29, '4:30pm', 1, 'Going to help water Kelly\'s plants. Great!'),
-(5, 1, 1, 1, 'Watering Plants and Laundry', 2019, 6, 20, '4:00pm', 1, 'Kelly needs someone to help her lift her heavy laundry basket, and also water her plants. Could someone please volunteer to meet her there?'),
-(9, 1, 3, 2, 'Help Mackey with his Dogs', 2019, 7, 2, '4:00pm', 0, 'Mackey needs his dogs taken the the vet, someone needs to help him get them in the car.'),
-(13, 1, 1, 1, 'Watering Plants', 2019, 6, 28, '2:00pm', 0, 'I am going to help Kelly water her plants today.'),
-(14, 1, 2, 2, 'Dig up Bushes', 2019, 6, 28, '6:00pm', 0, 'Mackey needs someone to help him dig up some rose bushes in his garden.'),
-(15, 1, 2, 1, 'Watering Plants', 2019, 6, 28, '6:30pm', 0, 'Kelly needs someone to water her plants again today.'),
-(20, 1, 1, 1, 'Watering Plants', 2019, 6, 1, '9:00am', 1, 'water four plants.'),
-(21, 1, 1, 3, 'Walk dog', 2019, 6, 6, '5:30pm', 0, 'Jerry has a Irish setter.'),
-(22, 1, 3, 3, 'Walk dog', 2019, 6, 10, '5:30pm', 0, '');
+INSERT INTO `visit` (`VisitID`, `ChurchID`, `Vol_ID`, `RecID`, `Purpose`, `Category`, `V_Year`, `V_Month`, `V_Day`, `V_Time`, `V_Complete`, `V_Notes`, `Counted`) VALUES
+(1, 1, 1, 1, 'Helping to Water Plants Today', 'RESPITE', 2019, 5, 29, '4:30pm', 1, 'Going to help water Kelly\'s plants. Great!', 0),
+(9, 1, 3, 2, 'Help Mackey with his Dogs', 'RESPITE', 2019, 7, 2, '4:00pm', 0, 'Mackey needs his dogs taken the the vet, someone needs to help him get them in the car.', 0),
+(13, 1, 1, 1, 'Watering Plants', 'RESPITE', 2019, 6, 28, '2:00pm', 0, 'I am going to help Kelly water her plants today.', 0),
+(14, 1, 2, 2, 'Dig up Bushes', 'RESPITE', 2019, 6, 28, '6:00pm', 0, 'Mackey needs someone to help him dig up some rose bushes in his garden.', 0),
+(15, 1, 2, 1, 'Watering Plants', 'RESPITE', 2019, 6, 28, '6:30pm', 0, 'Kelly needs someone to water her plants again today.', 0),
+(21, 1, 1, 3, 'Walk dog', 'RESPITE', 2019, 6, 6, '5:30pm', 0, 'Jerry has a Irish setter.', 0),
+(22, 1, 3, 3, 'Walk dog', 'RESPITE', 2019, 6, 10, '5:30pm', 0, '', 0),
+(23, 1, 1, 3, 'Doing Laundry', 'HOUSE', 2019, 7, 18, '2:00pm', 1, 'I\'m going to help with Laundry!', 0),
+(25, 1, 1, 2, 'watev', 'RESPITE', 2019, 6, 6, '6:00pm', 1, '', 0),
+(26, 1, 1, 3, 'Doing Laundry', 'HOUSE', 2019, 7, 18, '2:00pm', 1, 'I\'m going to help with Laundry!', 0);
 
 -- --------------------------------------------------------
 
@@ -205,13 +208,13 @@ CREATE TABLE `volunteer` (
 --
 
 INSERT INTO `volunteer` (`Vol_ID`, `ChurchID`, `V_Name`, `V_Password`, `V_Clearance`, `V_Address`, `V_Email`, `V_Notes`, `V_Phone`, `V_Score`) VALUES
-(1, 1, 'Janey Veeher', 'Password1', 'VOLUNTEER', '345 Grand Avenue', 'Janey@Gmail.com', 'Janey likes to water plants.', '231-999-9999', 12),
+(1, 1, 'Janey Veeher', 'Password1', 'VOLUNTEER', '345 Grand Avenue', 'Janey@Gmail.com', 'Janey likes to water plants.', '231-999-9999', 4),
 (2, 1, 'Pastor Jim', 'Password123', 'ADMIN', '34 clearance lane', 'Jim@Gmail.com', '', '231-459-6657', 0),
 (3, 1, 'None', 'DefaultAccountPasswordisnotsupposedtobeknown999555%*##donotenter', '', '', '########################%###########################', '', '', 0),
 (8, 1, 'Kimmy Nelson', 'OrangeOstrich9', 'VOLUNTEER', '23 Ostrich Avenue', 'Kimmy@yahoo.com', 'Kimmy\'s favorite animal is an Ostrich.', '291-323-4956', 0),
 (9, 1, 'Kendra Nelson', 'Kendra\'sbird97', 'VOLUNTEER', '251 Bird Lane', 'Kendra@gmail.com', 'Kendra\'s animal skills are great. she does well with taking animals to the vet.', '231-777-6997', 0),
 (10, 1, 'Bob Catt', 'shorthair', 'VOLUNTEER', '789 Feline Ave', 'bcatt@hotmail.com', '', '231-222-5678', 0),
-(11, 1, 'Eric Verstraete', 'LIFT#matters7', 'SUPERADMIN', '3158, Grand Rapids, MI 49501', 'eric@lifemattersww.org', 'President of Life Matters WorldWide.', '616-745-1495', 0),
+(11, 1, 'Eric Verstraete', 'LIFT#matters7', 'SUPERADMIN', '3158, Grand Rapids, MI 49501', 'superadmin@exampleemail.com', 'President of the Website.', '616-745-1495', 0),
 (14, 11, 'Mike Fergetful', 'Password1', 'ADMIN', '345 England Avenue', 'Baconator@gmail.com', 'Head of Methodist Test Church', '231-559-7897', 0),
 (15, 11, 'Amanda Litely', 'Password1', 'ADMIN', '345 England Avenue', 'Amanda2299@yahoo.com', 'Coordinator of the LIFT program for Methodist Test Church', '234-776-5231', 0);
 
@@ -302,7 +305,7 @@ ALTER TABLE `skill`
 -- AUTO_INCREMENT for table `visit`
 --
 ALTER TABLE `visit`
-  MODIFY `VisitID` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `VisitID` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `visitcomments`
