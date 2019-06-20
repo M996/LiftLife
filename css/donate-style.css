@@ -1,0 +1,70 @@
+.donor-search-page {
+  background-color: rgb(180,200,240);
+  display: block;
+}
+
+.donor-search-bar {
+  width: 80%;
+  border: 2px solid blue;
+  border-radius: 40px;
+  margin: 16px;
+}
+
+.donor-search-results {
+  display: block;
+}
+
+.donor-search-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.name-of-couple {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.donor-search-destination {
+  font-weight: bolder;
+  border-bottom: 1px dotted black;
+}
+
+.text-container-donor {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.donor-search-description {
+  font-weight: bold;
+  font-style: italic;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.donor-search-description2 {
+  width: 70%;
+  margin-left: 4px;
+}
+
+#progress-bar {
+  width: 25%;
+  height: 16px;
+  border: 2px black solid;
+}
+
+#progress-bar-fill {
+  background-color: rgb(10,40,300);
+  height: 100%;
+  width: 20%;
+}
+
+.shizzle {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 6px;
+    background-color: silver;
+    margin: 2px;
+}

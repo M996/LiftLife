@@ -1,0 +1,75 @@
+.item-page-container {
+  background-color: rgb(180,200,240);
+  display: block;
+}
+
+.item-info-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.items-available-header {
+  margin-left: 0;
+  margin-right: auto;
+  font-size: 2.8rem;
+  font-weight: bolder;
+  font-style: oblique;
+}
+
+.city-list-items {
+  padding: 8px;
+  margin-right: 10%;
+}
+
+.item-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item-box {
+  max-height: 320px;
+  display: flex;
+  margin: 4%;
+  width: 40%;
+}
+
+.item-image-list {
+    width: 20%;
+    min-width: 180px;
+    max-width: 200px;
+    height: 80%;
+    min-height: 150px;
+    max-height: 210px;
+    margin-right: 4%;
+}
+
+.item-text-box {
+  display: block;
+  width: 60%;
+}
+
+.item-list-title {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.item-list-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item-list-cost {
+  font-weight: bolder;
+  margin-left: 0;
+  margin-right: auto;
+  padding-right: 5%;
+}
+
+.item-list-text {
+  font-size: 1rem;
+  font-family: serif;
+}

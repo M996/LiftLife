@@ -1,0 +1,112 @@
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(180,200,240);
+}
+
+.banner-homepage {
+  width: 100%;
+  height: 15%;
+  margin-bottom: 5px;
+}
+
+.banner-image-home {
+  width: 100%;
+  height: 50%;
+}
+
+.banner-buttons {
+  margin-top: -60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-account-button-div {
+  margin: auto 20px;
+  align-items: center;
+  margin-right: 174px;
+}
+
+.create-account-button {
+  padding: 15px 30px;
+  background-color: rgba(30,140,40,0.95);
+  border-radius: 50px;
+  color: white;
+  font-weight: bolder;
+}
+
+.donate-button {
+  padding: 15px 22px;
+  background-color: rgba(30,140,40,0.95);
+  border-radius: 50px;
+  color: white;
+  font-weight: bolder;
+}
+
+.negative-margin-text {
+  margin-top: -15px;
+  margin-left: 16%;
+  font-size: 8px;
+  color: gold;
+  font-weight: bolder;
+}
+
+.homepage-destinations {
+  border-top: 4px solid grey;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage-destinations-div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 8px 2%;
+}
+
+.seperation-div-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage-destination-img {
+  width: 400px;
+  margin: 30px;
+}
+
+.homepage-destination-img:hover {
+  padding: 0px;
+  margin: 22px 0px;;
+  width: 430px;
+}
+
+.destination-negative-margin {
+    margin-top: -34px;
+    font-size: 12px;
+    font-weight: bolder;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(120,10,40,0.22);
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.text-container-home {
+  margin-top: -5%;
+  width: 70%;
+  height: auto;
+}
+
+.homepage-destination-text {
+    margin-left: 22%;
+    margin-right: auto;
+}

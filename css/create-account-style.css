@@ -1,0 +1,77 @@
+.account-creation-screen {
+  background-color: rgb(180,200,240);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.small-advert-account {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 12%
+}
+
+.small-advert1 {
+  height: 260px;
+  width: 150px;
+  margin: 2px 20px;
+}
+
+.medium-advert {
+  width: 460px;
+  height: 250px;
+}
+
+.large-advert {
+  height: 305px;
+  width: 710px;
+}
+
+.create-account-form {
+  display: flex;
+  justify-content: space-around;
+  width: 38%
+}
+
+.account-form-input {
+  margin: 28px;
+  border-radius: 8px;
+}
+
+.account-creation-button {
+  border-radius: 20px;
+  padding: 5px;
+  background-color: rgb(10,10,90);
+  color: white;
+  margin-bottom: 6px;
+}
+
+.account-creation-button:hover {
+  padding: 8px;
+  margin-bottom: 0px;
+}
+
+.create-account-images {
+  display: block;
+  margin: 8px;
+  width: 48%;
+}
+
+.top-account-images {
+  display: flex;
+}
+
+.profile-image-upload {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 50%;
+  height: auto;
+  min-width: 60px;
+  max-width: 180px;
+  margin-bottom: 5%;
+}

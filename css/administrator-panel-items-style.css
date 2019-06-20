@@ -1,0 +1,32 @@
+.view-column-admin-item {
+width: 21%;
+display: block;
+border-right: solid 1px black;
+}
+
+#description-column {
+  border-right: none;
+  width: 37%;
+}
+
+
+@media screen and (max-width: 720px) {
+  .view-column-admin-item {
+    width: 98%;
+    border-right: none;
+    border-left: solid 1px black;
+  }
+  #description-column {
+    width: 98%;
+    border-right: none;
+    border-left: solid 1px black;
+  }
+}
+
+#description-text {
+  border: solid 2px rgb(180,20,20);
+  border-radius: 10px;
+  margin: 1% 1%;
+  padding: 5px;
+  height: 50px;
+}

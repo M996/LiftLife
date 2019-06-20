@@ -1,0 +1,144 @@
+.admin-tab-div {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  border-bottom: solid 2px black;
+}
+
+.admin-tab-div-backup {
+  flex-wrap: nowrap;
+  align-items: center;
+  border-bottom: solid 1px black;
+  display: none;
+}
+
+@media screen and (max-width: 720px) {
+  .admin-tab-div {
+    display: none;
+  }
+  .admin-tab-div-backup {
+    display: flex;
+  }
+  #admin-tab-backup {
+    display: block;
+  }
+  #current-admin-tab-backup {
+    background-color: rgb(160,160,160);
+    display: block;
+  }
+}
+
+.admin-tab-backup {
+  display: none;
+  margin-left: 30px;
+  padding: 18px;
+  color: white;
+  text-decoration: none;
+  font-family: sans-serif;
+  border: 3px solid rgb(40,5,5);
+  background-color: rgb(192,192,192);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-weight: bolder;
+  border-bottom: none;
+  margin-top: 20px;
+}
+
+.admin-tab {
+  padding: 18px;
+  color: white;
+  text-decoration: none;
+  font-family: sans-serif;
+  border: 3px solid rgb(40,5,5);
+  background-color: rgb(192,192,192);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-weight: bolder;
+  margin-left: 80px;
+  border-bottom: none;
+  margin-top: 20px;
+}
+
+#current-admin-tab {
+  background-color: rgb(160,160,160)
+}
+
+.cruise-view-admin {
+  display: block;
+  width: 98%;
+}
+
+
+.admin-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid 2px rgb(40,120,40);
+}
+
+.admin-input {
+  border: solid 2px rgb(40,120,40);
+  border-radius: 10px;
+  margin: 1% 1.8%;
+  padding: 5px;
+}
+
+.view-column-admin {
+width: 98%;
+display: block;
+border: solid 1px black;
+margin: 2%;
+}
+
+#visit-column {
+  width: 25%;
+}
+
+#final-column {
+  border-right: none;
+}
+
+.admin-view-name {
+  background-color: grey;
+  border: solid 2px rgb(180,200,240);
+}
+
+#right-size-admin {
+  height: 30px;
+}
+
+.admin-add {
+  background-color: rgb(40,148,65);
+  color: white;
+  border: solid 2px black;
+  border-radius: 4px;
+}
+
+.admin-add:hover {
+  cursor: cell;
+}
+
+.admin-view-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.adminbar-title {
+  font-family: sans-serif;
+  font-weight: bold;
+  color: silver;
+}
+
+.admin-info-text {
+  display: inline-block;
+  margin-right: 2%;
+  margin-left: 2%;
+  font-size: 16px;
+  font-family: sans-serif;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid grey;
+  padding-bottom: 8px;
+}
