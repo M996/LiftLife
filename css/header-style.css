@@ -18,8 +18,8 @@ and open the template in the editor.
 }
 
 .blue-nav {
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
   color: white;
   text-decoration: none;
   font-size: 18px;
@@ -28,6 +28,19 @@ and open the template in the editor.
 .homepage-button {
   margin-left: 4px;
   margin-right:auto;
+}
+
+#church-name-header {
+  color: white;
+  font-size: 18px;
+  font-family: sans-serif;
+  margin-right: auto;
+  margin-left: 1%;
+}
+
+#full-name-church {
+  color: rgb(220, 250, 220);
+  font-weight: bold;
 }
 
 .header-navbar {

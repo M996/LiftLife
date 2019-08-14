@@ -5,10 +5,12 @@
         <group>
             <file>file:/C:/xampp/htdocs/Liftweb/viewvisit.php</file>
             <file>file:/C:/xampp/htdocs/Liftweb/addvolunteer.php</file>
+            <file>file:/C:/xampp/htdocs/Liftweb/css/index-style.css</file>
             <file>file:/C:/xampp/htdocs/Liftweb/addrecipient.php</file>
             <file>file:/C:/xampp/htdocs/Liftweb/addchurch.php</file>
             <file>file:/C:/xampp/htdocs/Liftweb/css/administrator-panel-style.css</file>
             <file>file:/C:/xampp/htdocs/Liftweb/visitcreate.php</file>
+            <file>file:/C:/xampp/htdocs/Liftweb/logon.php</file>
         </group>
     </open-files>
 </project-private>

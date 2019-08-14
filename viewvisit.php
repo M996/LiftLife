@@ -120,7 +120,7 @@ function otherDisplay() {
   return $visitArray[0];
 }
 
-function churchDisplay() {
+function churchDisplayScorePage() {
   require 'config.php';
   $current_church_ID = $_SESSION['church'];
   $SQL_Query_Church = "SELECT ChurchID, ChurchName FROM church WHERE ChurchID = $current_church_ID ";
@@ -130,7 +130,16 @@ function churchDisplay() {
   return $churchArray;
 }
 
-$churchDisplay = churchDisplay();
+function totalDisplay() {
+  require 'config.php';
+  $SQL_Query_Visit_Stats = 'SELECT COUNT(*) FROM visit WHERE ChurchID = "' . $_SESSION['church'] . '" AND V_Complete != 0;';
+  $visitObj = mysqli_query($db, $SQL_Query_Visit_Stats);
+  $visitArray = mysqli_fetch_array($visitObj);
+
+  return $visitArray[0];
+}
+
+$churchDisplay = churchDisplayScorePage();
 $churchName = $churchDisplay['ChurchName'];
 $visitNumber = visitnumber();
 $respiteCount = respiteDisplay();
@@ -142,8 +151,12 @@ $transportCount = transportDisplay();
 $petCount = petDisplay();
 $socialCount = socialDisplay();
 $otherCount = otherDisplay();
+$totalCount = totalDisplay();
 ?>
 
+<head>
+<title>Statistics</title>
+</head>
 
 <body>
   <center style="margin-top: 44px;">
@@ -266,7 +279,7 @@ $otherCount = otherDisplay();
 
 </center>
 <form name="login" action="" method="post">
-  <div class="field-container">
+  <div class="field-container-score">
     <fieldset>
       <legend><strong>Visit Stats for <?php echo $churchName ?></strong></legend><br>
       <div id="buttongrid">
@@ -301,7 +314,7 @@ $otherCount = otherDisplay();
           <h6 class="admin-info-text">Visits made for Other Reasons was <span style="font-weight: bolder; font-size: 18px;"><?php echo $otherCount ?></span></h6>
         </div>
         <div id="row">
-          <h6 class="admin-info-text" style="margin-top: 12px;">Make sure to write down the total number of visits your Church has performed before resetting the counter. Only an Admin on the website can reset the counter.</h6>
+          <h6 class="admin-info-text" style="margin-top: 12px;"><?php echo $churchName ?> has performed a total of <span style="font-weight: bolder; font-size: 18px;"><?php echo $totalCount ?></span> Visits. Resetting the counter below will wipe the detailed information of all recent Visits. Only an Admin can reset the counter.</h6>
         </div>
         <div id="row">
           <input type="checkbox" value="" name="AdminResetOrder" style="border: 2px solid red; border-radius: 10px;">Reset Score to Zero</input>

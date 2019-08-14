@@ -77,7 +77,7 @@ if (isset($_POST['congratsmessage'])) {
 
 
 // Define the functions that we will use to display information about the visits to be conducted.
-  function churchDisplay() {
+  function churchDisplayadd() {
     require 'config.php';
     $SQL_Query_Church = 'SELECT ChurchID, ChurchName, Address, Pastor, Coordinator, MainEmail, CoordEmail, Phone, CoordPhone, ChurchWeb, ChurchStatus FROM church ORDER BY ChurchStatus, ChurchName';
     $display_church = mysqli_query($db, $SQL_Query_Church);
@@ -87,13 +87,18 @@ if (isset($_POST['congratsmessage'])) {
 
 ?>
 
+
+<head>
+<title>Add Churches to LIFT</title>
+</head>
+
 <div class="Administrator-container">
   <div class="admin-tab-div">
     <a href="visitcreate.php" class="admin-tab">Visitors Needed</a>
     <a href="addrecipient.php" class="admin-tab">Add Recipient</a>
     <?php
     if ($_SESSION['clearance'] === "ADMIN" || $_SESSION['clearance'] === "SUPERADMIN") {
-      echo '<a href="addvolunteer.php" class="admin-tab">Add Volunteer</a>';
+      echo '<a href="addvolunteer.php" class="admin-tab">Add Champion</a>';
     }
     if ($_SESSION['clearance'] === "SUPERADMIN") {
       echo '<a href="addchurch.php" class="admin-tab" id="current-admin-tab">Add Church</a>';
@@ -140,7 +145,7 @@ if (isset($_POST['congratsmessage'])) {
       <div class="admin-view-name">
         <h4 class="adminbar-title">Churches</h4>
       </div>
-      <?php $rec_ob = churchDisplay();
+      <?php $rec_ob = churchDisplayadd();
       foreach ($rec_ob as $display) {
         $church = $display['ChurchName'];
         $address = $display['Address'];

@@ -13,6 +13,8 @@
   <link rel="stylesheet" type="text/css" href="css/logon-style.css">
   <link rel="stylesheet" type="text/css" href="css/administrator-panel-style.css">
   <link rel="stylesheet" type="text/css" href="css/administrator-panel-items-style.css">
+  <link rel="stylesheet" type="text/css" href="css/aboutLIFT-style.css">
+  <link rel="stylesheet" type="text/css" href="css/aboutLMWW-style.css">
 </head>
 <?php
 
@@ -38,10 +40,28 @@ if ($url != 'http://localhost/Liftweb/logon.php') {
 <body>
   <div class="header-menu">
       <a href="index.php" class="homepage-button"><img src="src/images/logolmww.png"></a>
+      <?php
+      if (isset($_SESSION['church'])) {
+        function churchDisplay() {
+          require 'config.php';
+          $current_church_ID = $_SESSION['church'];
+          $SQL_Query_Church = "SELECT ChurchName FROM church WHERE ChurchID = $current_church_ID ";
+          $display_church = mysqli_query($db, $SQL_Query_Church);
+          $churchArray = mysqli_fetch_array($display_church);
+
+          return $churchArray;
+        }
+
+        $churchNameHeaderArray = churchDisplay();
+        $churchNameHeader = $churchNameHeaderArray['ChurchName'];
+
+
+      echo '<h2 id="church-name-header">Your Church: <span id="full-name-church">' . $churchNameHeader . '</span></h2> ';
+      }
+      ?>
     <div class="header-navbar">
       <?php  if (isset($_SESSION['benID'])) {
-
-      echo '<a href="visitcreate.php" class="blue-nav">View Visits</a>
+        echo '<a href="visitcreate.php" class="blue-nav">View Visits</a>
       ';}?>
     </div>
     <div class="header-login">

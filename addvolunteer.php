@@ -76,6 +76,9 @@ if (isset($_POST['delete'])) {
     return $churchcurrent;
   }
 ?>
+<head>
+<title>Add Champions to LIFT</title>
+</head>
 
 <div class="Administrator-container">
   <div class="admin-tab-div">
@@ -83,7 +86,7 @@ if (isset($_POST['delete'])) {
     <a href="addrecipient.php" class="admin-tab">Add Recipient</a>
     <?php
     if ($_SESSION['clearance'] === "ADMIN" || $_SESSION['clearance'] === "SUPERADMIN") {
-      echo '<a href="addvolunteer.php" class="admin-tab" id="current-admin-tab">Add Bazooka</a>';
+      echo '<a href="addvolunteer.php" class="admin-tab" id="current-admin-tab">Add Champion</a>';
     }
     if ($_SESSION['clearance'] === "SUPERADMIN") {
       echo '<a href="addchurch.php" class="admin-tab">Add Church</a>';

@@ -7,13 +7,28 @@ body {
 
 .banner-homepage {
   width: 100%;
-  height: 15%;
-  margin-bottom: 5px;
+  height: 25%;
+  position: relative;
 }
 
 .banner-image-home {
   width: 100%;
-  height: 50%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 730px) {
+  #banner-buttons {
+    display: block;
+  }
+  #donate-button-div {
+    margin-left: 36%;
+    margin-right: auto;
+    margin-bottom: 5%;
+  }
+}
+
+.donate-button-div {
+  margin: 0 10%;
 }
 
 .banner-buttons {

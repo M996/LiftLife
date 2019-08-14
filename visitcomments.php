@@ -102,6 +102,10 @@ if (isset($_POST['congratsmessage'])) {
 
 ?>
 
+<head>
+<title>Comments</title>
+</head>
+
 <div class="Administrator-container">
   <div class="admin-tab-div">
     <a href="visitcreate.php" class="admin-tab">Back</a>

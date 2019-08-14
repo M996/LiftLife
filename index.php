@@ -1,16 +1,19 @@
 <?php include 'header.php'   ?>
 
 <head>
-<title> Welcome to Carnival Gifts </title>
+<title> LIFT Database </title>
+<script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <div class="banner-homepage">
-  <img src="src/images/bannerimage.jpg" class="banner-image-home">
-    <div class="banner-buttons">
-      <div class="create-account-button-div">
-        <a href="aboutLIFT.php"><button type="button" class="create-account-button">What is LIFT</button></a>
+  <div>
+  <img src="src/images/bannerimage.jpg" class="banner-image-home" id="img-changer">
+</div>
+    <div class="banner-buttons" id="banner-buttons">
+      <div class="donate-button-div" id="donate-button-div">
+        <a href="aboutLIFT.php"><button type="button" class="donate-button">What is LIFT</button></a>
       </div>
-      <div class="donate-button-div">
+      <div class="donate-button-div" id="donate-button-div">
         <a href="aboutLMWW.php"><button type="button" class="donate-button">What is LMWW</button></a>
       </div>
     </div>
@@ -19,6 +22,16 @@
   <br>
   <center>
     <script language="javascript" type="text/javascript">
+
+    $(window).resize(function() {
+      if(window.innerWidth < 730){
+          document.getElementById("img-changer").src = "src/images/bannerimage2.jpg";
+      }
+      if(window.innerWidth >= 730){
+          document.getElementById("img-changer").src = "src/images/bannerimage.jpg";
+      }
+    });
+
     var day_of_week = new Array('Sun','Mon','Tue','Wed','Thu','Fri','Sat');
     var month_of_year = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
 
@@ -77,7 +90,7 @@
     cal += TD_end + TR_end;
     cal += TR_start;
 
-  
+
 
     // FILL IN BLANK GAPS UNTIL TODAY'S DAY
     for(index=0; index < Calendar.getDay(); index++)

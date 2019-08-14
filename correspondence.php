@@ -65,6 +65,9 @@ if (isset($_POST['congratsmessage'])) {
   }
 
 ?>
+<head>
+<title>Correspondences</title>
+</head>
 
 <div class="Administrator-container">
   <div class="admin-tab-div">

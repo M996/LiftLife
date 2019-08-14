@@ -1,6 +1,17 @@
 .field-container {
   margin: 5% 10%;
+  position: absolute;
+  top: 12%;
+  left: -6%;
+  width: 40%;
 }
+
+
+.fieldset-background {
+background-color: rgba(70,70,220,0.35);
+padding-top: -5px;
+}
+
 
 .account-login-button {
   border-radius: 20px;
@@ -19,4 +30,10 @@
   margin-left: 125px;
   margin-right: 0px;
   margin-top: 3px;
+}
+
+
+.field-container-score {
+  margin: 4% 8%;
+  width: 80%;
 }
